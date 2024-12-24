@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Friends Application</string>
+
+    <!-- Content Descriptions -->
+    <string name="app_logo">App Logo</string>
+
+    <!-- Button Texts -->
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+</resources>
