@@ -9,11 +9,16 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <!-- First Card -->
@@ -51,8 +56,10 @@
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="Start →"
-                        android:textColor="@color/purple_500" />
+                        android:textColor="@color/purple_500"
+                        android:textSize="18sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -90,8 +97,10 @@
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="Start →"
-                        android:textColor="@color/purple_500" />
+                        android:textColor="@color/purple_500"
+                        android:textSize="18sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
