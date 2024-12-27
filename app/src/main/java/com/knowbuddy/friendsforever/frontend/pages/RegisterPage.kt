@@ -1,49 +1,79 @@
-package com.knowbuddy.friendsforever.frontend.pages
+package com.knowbuddy.friendsforever.frontend.pages;
 
+import android.app.Activity;
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import com.knowbuddy.friendsforever.R
 
-class RegisterPage : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.activity_register_page, container, false)
-        val emailEditText = view.findViewById<EditText>(R.id.signup_email)
-        val passwordEditText = view.findViewById<EditText>(R.id.signup_password)
-        val confirmPasswordEditText = view.findViewById<EditText>(R.id.signup_confirm)
-        val signUpButton = view.findViewById<Button>(R.id.signup_button)
+public class RegisterPage : Activity(){
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_register_page)
+
+        val emailEditText = findViewById<EditText>(R.id.signup_email)
+                val passwordEditText = findViewById<EditText>(R.id.signup_password)
+                val confirmPasswordEditText = findViewById<EditText>(R.id.signup_confirm)
+                val signUpButton = findViewById<Button>(R.id.signup_button)
+
+                val minPasswordLength = resources.getInteger(R.integer.min_password_length)
+        val minLetters = resources.getInteger(R.integer.min_letters)
+        val minNumeric = resources.getInteger(R.integer.min_numeric)
+        val minSymbols = resources.getInteger(R.integer.min_symbols)
+        val minNonLetter = resources.getInteger(R.integer.min_nonletter)
+        val maxPasswordLength = resources.getInteger(R.integer.max_password_length)
+
         signUpButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()
             val confirmPassword = confirmPasswordEditText.text.toString().trim()
-            if(!isValidEmail(email)){
-                emailEditText.error="Invalid Email"
-            }
-            else if (password.length < 8 || password.contains(" ")) {
-                passwordEditText.error = "Password must be at least 8 characters and contain no spaces"
-            }
-            else if (password != confirmPassword) {
-                confirmPasswordEditText.error = "Passwords do not match"
-            }
-            else {
-                Toast.makeText(context, "Sign-Up Successful", Toast.LENGTH_SHORT).show()
-            // Navigate to LoginFragment
-                parentFragmentManager.beginTransaction() .replace(R.id.view_pager, LoginPage())
-                    .commit()
+
+            when {
+                !isValidEmail(email) -> {
+                    emailEditText.error = "Invalid Email"
+                }
+                password.length < minPasswordLength || password.length > maxPasswordLength -> {
+                    passwordEditText.error = "Password must be between $minPasswordLength and $maxPasswordLength characters"
+                }
+                password.contains(" ") -> {
+                    passwordEditText.error = "Password must not contain spaces"
+                }
+                password != confirmPassword -> {
+                    confirmPasswordEditText.error = "Passwords do not match"
+                }
+                !hasValidPasswordComplexity(password, minLetters, minNumeric, minSymbols, minNonLetter) -> {
+                    passwordEditText.error = "Password must contain letters, numbers, symbols, and non-letter characters"
+                }
+                else -> {
+                    Toast.makeText(this, "Sign-Up Successful", Toast.LENGTH_SHORT).show()
+                    // Navigate to LoginActivity or other logic
+                    finish() // Close the current activity
+                }
             }
         }
-        return  view
     }
 
     private fun isValidEmail(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    private fun hasValidPasswordComplexity(password: String, minLetters: Int, minNumeric: Int, minSymbols: Int, minNonLetter: Int): Boolean {
+        var letters = 0
+        var numeric = 0
+        var symbols = 0
+        var nonLetters = 0
+
+        for (ch in password) {
+            when {
+                ch.isLetter() -> letters++
+                ch.isDigit() -> numeric++
+                !ch.isLetterOrDigit() -> symbols++
+            }
+            if (!ch.isLetter()) nonLetters++
+        }
+
+        return letters >= minLetters && numeric >= minNumeric && symbols >= minSymbols && nonLetters >= minNonLetter
     }
 }

@@ -7,7 +7,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
 import com.knowbuddy.friendsforever.frontend.pages.HomePage
 import com.knowbuddy.friendsforever.frontend.pages.LoginPage
-import com.knowbuddy.friendsforever.frontend.pages.LoginRegister
 import com.knowbuddy.friendsforever.frontend.pages.RegisterPage
 import com.knowbuddy.friendsforever.frontend.pages.ScoreBoard
 
@@ -20,7 +19,7 @@ class MainActivity : ComponentActivity() {
         val loginButton: Button = findViewById(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val intent = Intent(this, HomePage::class.java)
+            val intent = Intent(this, LoginPage::class.java)
             startActivity(intent)
         }
         val signUpButton: Button = findViewById(R.id.signUpButton)

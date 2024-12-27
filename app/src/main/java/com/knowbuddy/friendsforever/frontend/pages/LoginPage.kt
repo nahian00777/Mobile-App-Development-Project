@@ -1,32 +1,63 @@
 package com.knowbuddy.friendsforever.frontend.pages
 
+import android.app.Activity
+import android.content.Intent
+import android.net.wifi.hotspot2.pps.HomeSp
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import com.knowbuddy.friendsforever.R
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class LoginPage: Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.activity_login_page, container, false)
+class LoginPage : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login_page)
 
-        val emailEditText = view.findViewById<EditText>(R.id.login_email)
-        val passworEditText = view.findViewById<EditText>(R.id.login_password)
-        val loginButton = view.findViewById<Button>(R.id.login_button)
+        val emailEditText = findViewById<EditText>(R.id.login_email)
+        val passwordEditText = findViewById<EditText>(R.id.login_password)
+        val loginButton = findViewById<Button>(R.id.login_button)
 
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
-            val password = passworEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
 
-            Toast.makeText(context,"Login Successful", Toast.LENGTH_SHORT).show()
+            when {
+                email.isEmpty() -> {
+                    emailEditText.error = "Email cannot be empty"
+                }
+                !isValidEmail(email) -> {
+                    emailEditText.error = "Invalid email format"
+                }
+                password.isEmpty() -> {
+                    passwordEditText.error = "Password cannot be empty"
+                }
+                else -> {
+                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                    // Add navigation or other logic here
+
+//                    loginButton.setOnClickListener {
+//                        val intent = Intent(this, HomePage::class.java)
+//                        startActivity(intent)
+//                    }
+                    CoroutineScope(Dispatchers.Main).launch {
+                        delay(1000) // 3 seconds delay
+                        // Navigate to HomePage after delay
+                        val intent = Intent(this@LoginPage, HomePage::class.java)
+                        startActivity(intent)
+                        finish()  // Finish the current activity to remove it from the back stack
+                    }
+                }
+            }
         }
-        return view
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }
