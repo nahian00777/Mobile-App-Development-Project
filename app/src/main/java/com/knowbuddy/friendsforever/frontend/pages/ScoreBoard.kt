@@ -1,5 +1,6 @@
 package com.knowbuddy.friendsforever.frontend.pages
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,7 +9,7 @@ import com.knowbuddy.friendsforever.R
 import com.knowbuddy.friendsforever.frontend.adapter.ScoreAdapter
 import com.knowbuddy.friendsforever.frontend.models.FriendScore
 
-class ScoreBoard : AppCompatActivity() {
+class ScoreBoard : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
