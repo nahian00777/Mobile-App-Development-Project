@@ -6,10 +6,33 @@
     android:background="@drawable/img_bg"
     tools:context=".MainActivity">
 
+    <!-- App Logo -->
+    <ImageView
+        android:id="@+id/navBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/nav_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Share Button  at right -->
+    <ImageButton
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:src="@drawable/share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,10 +43,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="16dp"
             android:orientation="vertical">
 
             <!-- First Card -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/firstCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -67,6 +92,7 @@
 
             <!-- Second Card -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/secondCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -110,6 +136,7 @@
 
             <!-- Third Card -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/thirdCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
