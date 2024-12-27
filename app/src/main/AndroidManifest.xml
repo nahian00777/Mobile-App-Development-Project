@@ -27,12 +27,12 @@
         <activity
             android:name=".frontend.pages.HomePage"
             android:exported="false" />
-        <activity
-            android:name=".frontend.pages.LoginPage"
-            android:exported="false" />
-        <activity
-            android:name=".frontend.pages.RegisterPage"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".frontend.pages.LoginPage"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".frontend.pages.RegisterPage"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".MainActivity"
             android:exported="true"
