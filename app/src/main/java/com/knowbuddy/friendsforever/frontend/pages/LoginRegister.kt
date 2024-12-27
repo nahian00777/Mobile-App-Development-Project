@@ -17,9 +17,9 @@ class LoginRegister : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.view_pager,RegisterPage())
+                .replace(R.id.view_pager, RegisterPage())
                 .commit()
         }
     }
