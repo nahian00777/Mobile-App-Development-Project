@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class LoginPage : Activity() {
+class LoginPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_page)
@@ -31,12 +31,15 @@ class LoginPage : Activity() {
                 email.isEmpty() -> {
                     emailEditText.error = "Email cannot be empty"
                 }
+
                 !isValidEmail(email) -> {
                     emailEditText.error = "Invalid email format"
                 }
+
                 password.isEmpty() -> {
                     passwordEditText.error = "Password cannot be empty"
                 }
+
                 else -> {
                     Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
                     // Add navigation or other logic here
