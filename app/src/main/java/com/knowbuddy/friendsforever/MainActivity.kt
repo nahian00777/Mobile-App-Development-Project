@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         val loginButton: Button = findViewById(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val intent = Intent(this, NavigationDrawerActivity::class.java)
+            val intent = Intent(this, ScoreBoard::class.java)
             startActivity(intent)
         }
         val signUpButton: Button = findViewById(R.id.signUpButton)
