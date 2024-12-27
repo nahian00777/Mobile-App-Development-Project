@@ -1,9 +1,11 @@
 package com.knowbuddy.friendsforever.frontend.pages;
 
 import android.app.Activity;
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.knowbuddy.friendsforever.R
@@ -17,6 +19,7 @@ public class RegisterPage : AppCompatActivity() {
         val passwordEditText = findViewById<EditText>(R.id.signup_password)
         val confirmPasswordEditText = findViewById<EditText>(R.id.signup_confirm)
         val signUpButton = findViewById<Button>(R.id.signup_button)
+        val loginRedirectText = findViewById<TextView>(R.id.loginRedirectText)
 
         val minPasswordLength = resources.getInteger(R.integer.min_password_length)
         val minLetters = resources.getInteger(R.integer.min_letters)
@@ -61,6 +64,13 @@ public class RegisterPage : AppCompatActivity() {
                     finish() // Close the current activity
                 }
             }
+        }
+
+
+        // Add this OnClickListener for the Login TextView
+        loginRedirectText.setOnClickListener {
+            val intent = Intent(this, LoginPage::class.java)
+            startActivity(intent)
         }
     }
 

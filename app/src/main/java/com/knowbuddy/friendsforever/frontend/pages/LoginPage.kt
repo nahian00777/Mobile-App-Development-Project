@@ -6,6 +6,7 @@ import android.net.wifi.hotspot2.pps.HomeSp
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.knowbuddy.friendsforever.R
@@ -22,6 +23,7 @@ class LoginPage : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.login_email)
         val passwordEditText = findViewById<EditText>(R.id.login_password)
         val loginButton = findViewById<Button>(R.id.login_button)
+        val signUpRedirectText = findViewById<TextView>(R.id.signUpRedirectText)
 
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -57,6 +59,11 @@ class LoginPage : AppCompatActivity() {
                     }
                 }
             }
+        }
+        // Add this OnClickListener for the SignUp TextView
+        signUpRedirectText.setOnClickListener {
+            val intent = Intent(this, RegisterPage::class.java)
+            startActivity(intent)
         }
     }
 
