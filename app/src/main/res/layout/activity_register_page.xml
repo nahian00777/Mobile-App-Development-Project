@@ -15,9 +15,7 @@
         android:layout_gravity="center"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-
-        >
+        app:cardElevation="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,57 +44,68 @@
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
-
                 <!-- Email input field -->
                 <EditText
                     android:id="@+id/signup_email"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="30dp"
-                    android:background="@drawable/edittext_bkg"
+                    android:background="@color/white"
                     android:drawableStart="@drawable/baseline_email_24"
                     android:drawablePadding="8dp"
                     android:hint="@string/Email"
                     android:inputType="textEmailAddress"
-                    android:padding="8dp" />
+                    android:padding="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey" />
 
                 <!-- Password input field -->
                 <EditText
                     android:id="@+id/signup_password"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/edittext_bkg"
-                    android:drawableLeft="@drawable/baseline_lock_24"
-                    android:hint="@string/Password"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/white"
+                    android:drawableStart="@drawable/baseline_lock_24"
+                    android:drawablePadding="8dp"
+                    android:hint="Password"
                     android:inputType="textPassword"
-                    android:padding="8dp" />
-                <!--            android:drawablePadding="8dp"-->
+                    android:padding="16dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/grey" />
 
-                <!-- Confirm password input field -->
                 <EditText
                     android:id="@+id/signup_confirm"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/edittext_bkg"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/white"
+                    android:drawableStart="@drawable/baseline_password_24"
+                    android:drawablePadding="8dp"
                     android:hint="@string/ConfirmPassword"
                     android:inputType="textPassword"
-                    android:padding="8dp" />
-                <!--            android:drawableStart="@drawable/baseline_password_24"-->
-                <!--            android:drawablePadding="8dp"-->
+                    android:padding="16dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/grey" />
 
-                <!-- Sign-up button -->
+
                 <Button
                     android:id="@+id/signup_button"
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="70dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="30dp"
                     android:backgroundTint="@color/black"
                     android:text="@string/sign_up"
                     android:textColor="@color/design_default_color_background"
                     android:textSize="18sp"
                     app:cornerRadius="30dp" />
+
+
+                <!-- Confirm password input field -->
+                <!--            android:drawableStart="@drawable/baseline_password_24"-->
+                <!--            android:drawablePadding="8dp"-->
+
 
                 <TextView
                     android:id="@+id/loginRedirectText"

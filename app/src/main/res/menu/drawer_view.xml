@@ -4,29 +4,27 @@
         <item
             android:id="@+id/nav_first_frag"
             android:checked="true"
-            android:icon="@drawable/ic_launcher_foreground"
-            android:title="First" />
+            android:icon="@drawable/baseline_home_24"
+            android:title="Home" />
         <item
             android:id="@+id/nav_second_frag"
-            android:icon="@drawable/ic_launcher_foreground"
-            android:title="Second" />
+            android:icon="@drawable/baseline_scoreboard_24"
+            android:title="ScoreBoard" />
         <item
             android:id="@+id/nav_third_frag"
-            android:icon="@drawable/ic_launcher_foreground"
-            android:title="Third" />
-        <item android:title="sub item">
-            <menu>
-                <group android:checkableBehavior="single">
-                    <item
-                        android:id="@+id/nav_sub_first"
-                        android:icon="@drawable/ic_launcher_foreground"
-                        android:title="Sub First" />
-                    <item
-                        android:id="@+id/nav_sub_second"
-                        android:icon="@drawable/ic_launcher_foreground"
-                        android:title="Sub Second" />
-                </group>
-            </menu>
-        </item>
+            android:icon="@drawable/baseline_share_24"
+            android:title="Share" />
+        <item
+            android:id="@+id/nav_fourth_frag"
+            android:icon="@drawable/baseline_feedback_24"
+            android:title="Feedback" />
+        <item
+            android:id="@+id/nav_fifth_frag"
+            android:icon="@drawable/baseline_contact_support_24"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/nav_sixth_frag"
+            android:icon="@drawable/baseline_star_rate_24"
+            android:title="Rate Us" />
     </group>
 </menu>
