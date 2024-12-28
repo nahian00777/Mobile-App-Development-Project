@@ -36,8 +36,8 @@ class HomePage : AppCompatActivity() {
         setupDrawerContent(navigationView)
 
         val firstCard: CardView = findViewById(R.id.firstCard)
-//        val secondCard: CardView = findViewById(R.id.secondCard)
-//        val thirdCard: CardView = findViewById(R.id.thirdCard)
+        val secondCard: CardView = findViewById(R.id.secondCard)
+        val thirdCard: CardView = findViewById(R.id.thirdCard)
 
         // Add onClickListeners to the cards
         firstCard.setOnClickListener {
@@ -45,16 +45,16 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this, Quiz1::class.java)
             startActivity(intent)
         }
-//        secondCard.setOnClickListener {
-//            // Add code to handle the click event
-//            val intent = Intent(this, Quiz2::class.java)
-//            startActivity(intent)
-//        }
-//        thirdCard.setOnClickListener {
-//            // Add code to handle the click event
-//            val intent = Intent(this, Quiz3::class.java)
-//            startActivity(intent)
-//        }
+        secondCard.setOnClickListener {
+            // Add code to handle the click event
+            val intent = Intent(this, Quiz2::class.java)
+            startActivity(intent)
+        }
+        thirdCard.setOnClickListener {
+            // Add code to handle the click event
+            val intent = Intent(this, Quiz3::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

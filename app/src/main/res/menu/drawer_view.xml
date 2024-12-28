@@ -5,26 +5,32 @@
             android:id="@+id/nav_first_frag"
             android:checked="true"
             android:icon="@drawable/baseline_home_24"
+            android:textColor="@color/black"
             android:title="Home" />
         <item
             android:id="@+id/nav_second_frag"
             android:icon="@drawable/baseline_scoreboard_24"
+            android:textColor="@color/black"
             android:title="ScoreBoard" />
         <item
             android:id="@+id/nav_third_frag"
             android:icon="@drawable/baseline_share_24"
+            android:textColor="@color/black"
             android:title="Share" />
         <item
             android:id="@+id/nav_fourth_frag"
             android:icon="@drawable/baseline_feedback_24"
+            android:textColor="@color/black"
             android:title="Feedback" />
         <item
             android:id="@+id/nav_fifth_frag"
             android:icon="@drawable/baseline_contact_support_24"
+            android:textColor="@color/black"
             android:title="Contact Us" />
         <item
             android:id="@+id/nav_sixth_frag"
             android:icon="@drawable/baseline_star_rate_24"
+            android:textColor="@color/black"
             android:title="Rate Us" />
     </group>
 </menu>
