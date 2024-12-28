@@ -2,6 +2,8 @@ package com.knowbuddy.friendsforever.frontend.pages
 
 import android.app.Activity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,11 +12,15 @@ import com.knowbuddy.friendsforever.frontend.adapter.ScoreAdapter
 import com.knowbuddy.friendsforever.frontend.models.FriendScore
 
 class ScoreBoard : Activity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score_board)
 
+        val backButton = findViewById<ImageView>(R.id.back_button)
+
+        backButton.setOnClickListener {
+            finish()
+        }
         // Sample data for the scoreboard
         val scores = listOf(
             FriendScore("Nahian", "Kkk", 63),

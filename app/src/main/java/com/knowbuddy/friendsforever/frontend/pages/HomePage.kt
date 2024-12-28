@@ -67,19 +67,36 @@ class HomePage : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    //    private fun selectDrawerItem(menuItem: MenuItem) {
-//
-//        try {
-//            val fragment: Fragment = when (menuItem.itemId) {
-//            }
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-//    }
+    private fun selectDrawerItem(menuItem: MenuItem) {
+        when (menuItem.itemId) {
+            R.id.nav_home -> {
+                // Handle the home action
+            }
+
+            R.id.nav_scoreboard -> {
+                // Handle the scoreboard action
+                val intent = Intent(this, ScoreBoard::class.java)
+                startActivity(intent)
+            }
+
+            R.id.nav_share -> {
+                // Handle the share action
+            }
+
+            R.id.nav_feedback -> {
+                // Handle the feedback action
+            }
+
+            R.id.nav_rate -> {
+                // Handle the about action
+            }
+        }
+        drawer.closeDrawer(GravityCompat.START)
+    }
 
     private fun setupDrawerContent(navigationView: NavigationView) {
         navigationView.setNavigationItemSelectedListener { menuItem ->
-//            selectDrawerItem(menuItem)
+            selectDrawerItem(menuItem)
             true
         }
     }
