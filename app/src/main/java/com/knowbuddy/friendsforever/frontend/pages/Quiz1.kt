@@ -73,6 +73,9 @@ class Quiz1 : Activity() {
         findViewById<Button>(R.id.btnNext).setOnClickListener {
             handleNextButton()
         }
+        findViewById<Button>(R.id.btnBack).setOnClickListener {
+            handleBackButton()
+        }
     }
 
     private fun loadQuestion() {
@@ -123,6 +126,13 @@ class Quiz1 : Activity() {
         } else {
             Toast.makeText(this, "Please select an answer", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun handleBackButton() {
+            currentQuestionIndex--
+            if (currentQuestionIndex < questions.size) {
+                loadQuestion()
+            }
     }
 
     private fun showResults() {
