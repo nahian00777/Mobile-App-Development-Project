@@ -61,6 +61,8 @@ public class RegisterPage : AppCompatActivity() {
                 else -> {
                     Toast.makeText(this, "Sign-Up Successful", Toast.LENGTH_SHORT).show()
                     // Navigate to LoginActivity or other logic
+                    val intent = Intent(this, LoginPage::class.java)
+                    startActivity(intent)
                     finish() // Close the current activity
                 }
             }

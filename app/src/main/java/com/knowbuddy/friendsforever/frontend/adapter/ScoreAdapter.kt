@@ -13,9 +13,9 @@ class ScoreAdapter(private val scores: List<FriendScore>) :
 
     // ViewHolder to bind views for each item in RecyclerView
     class ScoreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val yourNameTextView: TextView = itemView.findViewById(R.id.your_name_text_view)
-        val friendNameTextView: TextView = itemView.findViewById(R.id.friend_name_text_view)
-        val scoreTextView: TextView = itemView.findViewById(R.id.score_text_view)
+        val yourNameTextView: TextView = itemView.findViewById(R.id.tvYourName)
+        val friendNameTextView: TextView = itemView.findViewById(R.id.tvFriendName)
+        val scoreTextView: TextView = itemView.findViewById(R.id.tvScore)
     }
 
     // Inflates the layout for each item in RecyclerView
