@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FriendsForever"
         tools:targetApi="31">
         <activity
+            android:name=".frontend.pages.CustomQuiz"
+            android:exported="false" />
+        <activity
             android:name=".frontend.navigationdrawer.NavigationDrawerActivity"
             android:exported="false" />
         <activity

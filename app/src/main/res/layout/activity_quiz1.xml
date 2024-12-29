@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -17,16 +16,16 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
         android:indeterminateOnly="false"
         android:max="100"
         android:progress="40"
         android:progressTint="@color/material_dynamic_tertiary10"
-    android:layout_marginHorizontal="16dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06" />
 
     <TextView
         android:id="@+id/tvNumber"
@@ -34,12 +33,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="00:30"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
     <!-- Card for Question -->
     <androidx.cardview.widget.CardView
@@ -51,9 +50,9 @@
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tvNumber"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tvNumber">
 
         <TextView
             android:id="@+id/tvQuestion"
@@ -61,9 +60,9 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="What is Taysir's biggest dream?"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
+            android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
     <!-- Options -->
@@ -71,82 +70,78 @@
         android:id="@+id/rgOptions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="32dp"
-        app:layout_constraintTop_toBottomOf="@id/cardQuestion"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cardQuestion">
 
-            <RadioButton
-                android:id="@+id/rbOption1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
-                android:buttonTint="@color/teal_700"
-                android:padding="12dp"
-                android:button="@drawable/transparent"
-                android:text="Getting married"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:background="@drawable/redio_buttons_background"
-                />
+        <RadioButton
+            android:id="@+id/rbOption1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/redio_buttons_background"
+            android:button="@drawable/transparent"
+            android:buttonTint="@color/teal_700"
+            android:padding="12dp"
+            android:text="Getting married"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/rbOption2"
-                android:button="@drawable/transparent"
-                android:background="@drawable/redio_buttons_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
-                android:buttonTint="@color/teal_700"
-                android:padding="12dp"
-                android:text="Getting married"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                />
+        <RadioButton
+            android:id="@+id/rbOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/redio_buttons_background"
+            android:button="@drawable/transparent"
+            android:buttonTint="@color/teal_700"
+            android:padding="12dp"
+            android:text="Getting married"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/rbOption3"
-                android:button="@drawable/transparent"
+        <RadioButton
+            android:id="@+id/rbOption3"
+            android:layout_width="match_parent"
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
-                android:buttonTint="@color/teal_700"
-                android:padding="12dp"
-                android:text="Getting married"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:background="@drawable/redio_buttons_background"
-                />
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/redio_buttons_background"
+            android:button="@drawable/transparent"
+            android:buttonTint="@color/teal_700"
+            android:padding="12dp"
+            android:text="Getting married"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/rbOption4"
-                android:layout_width="match_parent"
-                android:button="@drawable/transparent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
-                android:buttonTint="@color/teal_700"
-                android:padding="12dp"
-                android:text="Getting married"
-                android:textSize="16sp"
+        <RadioButton
+            android:id="@+id/rbOption4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/redio_buttons_background"
+            android:button="@drawable/transparent"
+            android:buttonTint="@color/teal_700"
+            android:padding="12dp"
+            android:text="Getting married"
 
-                android:background="@drawable/redio_buttons_background"
-                android:textColor="@color/black"
-                />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
     </RadioGroup>
 
     <!-- Navigation Buttons -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/rgOptions"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/rgOptions">
 
         <Button
             android:id="@+id/btnBack"

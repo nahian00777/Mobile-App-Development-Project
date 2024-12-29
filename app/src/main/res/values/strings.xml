@@ -24,4 +24,5 @@
     <!-- Drawer Strings -->
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
+    <string name="status_message">is on Friends Forever</string>
 </resources>
