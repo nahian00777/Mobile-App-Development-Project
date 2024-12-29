@@ -51,12 +51,12 @@ class HomePage : AppCompatActivity() {
         }
         secondCard.setOnClickListener {
             // Add code to handle the click event
-            val intent = Intent(this, Quiz2::class.java)
+            val intent = Intent(this, Quiz1::class.java)
             startActivity(intent)
         }
         thirdCard.setOnClickListener {
             // Add code to handle the click event
-            val intent = Intent(this, Quiz3::class.java)
+            val intent = Intent(this, Quiz1::class.java)
             startActivity(intent)
         }
 
@@ -69,13 +69,13 @@ class HomePage : AppCompatActivity() {
 
         secondBtn.setOnClickListener {
             // Add code to handle the click event
-            val intent = Intent(this, Quiz2::class.java)
+            val intent = Intent(this, Quiz1::class.java)
             startActivity(intent)
         }
 
         thirdBtn.setOnClickListener {
             // Add code to handle the click event
-            val intent = Intent(this, Quiz3::class.java)
+            val intent = Intent(this, Quiz1::class.java)
             startActivity(intent)
         }
     }
