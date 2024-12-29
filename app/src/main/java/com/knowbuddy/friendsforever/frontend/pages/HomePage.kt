@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.knowbuddy.friendsforever.R
@@ -38,6 +39,9 @@ class HomePage : AppCompatActivity() {
         val firstCard: CardView = findViewById(R.id.firstCard)
         val secondCard: CardView = findViewById(R.id.secondCard)
         val thirdCard: CardView = findViewById(R.id.thirdCard)
+        val firstBtn: Button = findViewById(R.id.firstBtn)
+        val secondBtn: Button = findViewById(R.id.secondBtn)
+        val thirdBtn: Button = findViewById(R.id.thirdBtn)
 
         // Add onClickListeners to the cards
         firstCard.setOnClickListener {
@@ -51,6 +55,25 @@ class HomePage : AppCompatActivity() {
             startActivity(intent)
         }
         thirdCard.setOnClickListener {
+            // Add code to handle the click event
+            val intent = Intent(this, Quiz3::class.java)
+            startActivity(intent)
+        }
+
+        // Add onClickListeners to the buttons
+        firstBtn.setOnClickListener {
+            // Add code to handle the click event
+            val intent = Intent(this, Quiz1::class.java)
+            startActivity(intent)
+        }
+
+        secondBtn.setOnClickListener {
+            // Add code to handle the click event
+            val intent = Intent(this, Quiz2::class.java)
+            startActivity(intent)
+        }
+
+        thirdBtn.setOnClickListener {
             // Add code to handle the click event
             val intent = Intent(this, Quiz3::class.java)
             startActivity(intent)
