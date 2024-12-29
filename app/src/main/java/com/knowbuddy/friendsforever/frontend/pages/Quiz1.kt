@@ -1,6 +1,7 @@
 package com.knowbuddy.friendsforever.frontend.pages
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.*
@@ -19,7 +20,7 @@ class Quiz1 : Activity() {
                 "Fay",
                 "Fayz",
                 "Circuit"
-            ), 3
+            ), 3,5
         ),
         Question(
             "What is Faysal Taysir's student ID?", listOf(
@@ -27,7 +28,7 @@ class Quiz1 : Activity() {
                 "2004109",
                 "2004110",
                 "2004120"
-            ), 1
+            ), 1,5
         ),
         Question(
             "Which hall does Faysal Taysir stay in?", listOf(
@@ -35,7 +36,7 @@ class Quiz1 : Activity() {
                 "BBH",
                 "SRH",
                 "North"
-            ), 3
+            ), 3,5
         ),
         Question(
             "Where is Faysal Taysir's hometown?", listOf(
@@ -43,7 +44,7 @@ class Quiz1 : Activity() {
                 "Chittagong",
                 "Khulna",
                 "Rajshahi"
-            ), 2
+            ), 2,5
         ),
         Question(
             "What is Faysal Taysir's biggest dream?", listOf(
@@ -51,7 +52,7 @@ class Quiz1 : Activity() {
                 "Traveling the world",
                 "Marrying a beautiful girl",
                 "Becoming a professional athlete"
-            ), 2
+            ), 2,5
         )
 
 
@@ -91,13 +92,20 @@ class Quiz1 : Activity() {
         val index = currentQuestionIndex + 1
         tvNumber.text = index.toString()
 
+
         // Set options
         radioGroup.clearCheck()
         question.options.forEachIndexed { index, option ->
             val radioButton = radioGroup.getChildAt(index) as RadioButton
             radioButton.text = option
             radioButton.isEnabled = true
+//            radioGroup.check(questions[currentQuestionIndex].inputtedAnswer)
 
+        }
+        val indexToCheck = questions[currentQuestionIndex].inputtedAnswer // Replace with the desired index
+        if (indexToCheck in 0 until radioGroup.childCount) {
+            val radioButtonToCheck = radioGroup.getChildAt(indexToCheck) as RadioButton
+            radioGroup.check(radioButtonToCheck.id)
         }
     }
 
@@ -108,7 +116,7 @@ class Quiz1 : Activity() {
         if (selectedOptionId != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedOptionId)
             val selectedIndex = radioGroup.indexOfChild(selectedRadioButton)
-
+            questions[currentQuestionIndex].inputtedAnswer = selectedIndex
             // Check if the answer is correct
             if (selectedIndex == questions[currentQuestionIndex].correctAnswer) {
 
@@ -133,12 +141,14 @@ class Quiz1 : Activity() {
             if (currentQuestionIndex < questions.size) {
                 loadQuestion()
             }
+
     }
 
     private fun showResults() {
         val tvQuestion = findViewById<TextView>(R.id.tvQuestion)
         val radioGroup = findViewById<RadioGroup>(R.id.rgOptions)
         val btnNext = findViewById<Button>(R.id.btnNext)
+        val btnBack = findViewById<Button>(R.id.btnBack)
 
         val progress = findViewById<ProgressBar>(R.id.progressBar)
 
@@ -146,7 +156,10 @@ class Quiz1 : Activity() {
         // Hide RadioGroup and show the result
         radioGroup.visibility = RadioGroup.GONE
         btnNext.visibility = Button.GONE
-
+        btnBack.setOnClickListener{
+            val intent = Intent(this@Quiz1, HomePage::class.java)
+            startActivity(intent)
+        }
         tvQuestion.text = "Quiz finished! Your score is $score out of ${questions.size}."
     }
 }
