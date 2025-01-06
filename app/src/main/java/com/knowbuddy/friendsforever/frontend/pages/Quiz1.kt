@@ -20,7 +20,7 @@ class Quiz1 : Activity() {
                 "Fay",
                 "Fayz",
                 "Circuit"
-            ), 3,5
+            ), 3, 5
         ),
         Question(
             "What is Faysal Taysir's student ID?", listOf(
@@ -28,7 +28,7 @@ class Quiz1 : Activity() {
                 "2004109",
                 "2004110",
                 "2004120"
-            ), 1,5
+            ), 1, 5
         ),
         Question(
             "Which hall does Faysal Taysir stay in?", listOf(
@@ -36,7 +36,7 @@ class Quiz1 : Activity() {
                 "BBH",
                 "SRH",
                 "North"
-            ), 3,5
+            ), 3, 5
         ),
         Question(
             "Where is Faysal Taysir's hometown?", listOf(
@@ -44,7 +44,7 @@ class Quiz1 : Activity() {
                 "Chittagong",
                 "Khulna",
                 "Rajshahi"
-            ), 2,5
+            ), 2, 5
         ),
         Question(
             "What is Faysal Taysir's biggest dream?", listOf(
@@ -52,9 +52,8 @@ class Quiz1 : Activity() {
                 "Traveling the world",
                 "Marrying a beautiful girl",
                 "Becoming a professional athlete"
-            ), 2,5
+            ), 2, 5
         )
-
 
 
     )
@@ -102,7 +101,8 @@ class Quiz1 : Activity() {
             radioGroup.check(questions[currentQuestionIndex].inputtedAnswer)
 
         }
-        val indexToCheck = questions[currentQuestionIndex].inputtedAnswer // Replace with the desired index
+        val indexToCheck =
+            questions[currentQuestionIndex].inputtedAnswer // Replace with the desired index
         if (indexToCheck in 0 until radioGroup.childCount) {
             val radioButtonToCheck = radioGroup.getChildAt(indexToCheck) as RadioButton
             radioGroup.check(radioButtonToCheck.id)
@@ -137,10 +137,10 @@ class Quiz1 : Activity() {
     }
 
     private fun handleBackButton() {
-            currentQuestionIndex--
-            if (currentQuestionIndex < questions.size) {
-                loadQuestion()
-            }
+        currentQuestionIndex--
+        if (currentQuestionIndex < questions.size) {
+            loadQuestion()
+        }
 
     }
 
@@ -156,7 +156,7 @@ class Quiz1 : Activity() {
         // Hide RadioGroup and show the result
         radioGroup.visibility = RadioGroup.GONE
         btnNext.visibility = Button.GONE
-        btnBack.setOnClickListener{
+        btnBack.setOnClickListener {
             val intent = Intent(this@Quiz1, HomePage::class.java)
             startActivity(intent)
         }
