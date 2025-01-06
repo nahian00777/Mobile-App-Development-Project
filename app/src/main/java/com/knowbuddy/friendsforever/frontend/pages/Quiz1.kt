@@ -99,7 +99,7 @@ class Quiz1 : Activity() {
             val radioButton = radioGroup.getChildAt(index) as RadioButton
             radioButton.text = option
             radioButton.isEnabled = true
-//            radioGroup.check(questions[currentQuestionIndex].inputtedAnswer)
+            radioGroup.check(questions[currentQuestionIndex].inputtedAnswer)
 
         }
         val indexToCheck = questions[currentQuestionIndex].inputtedAnswer // Replace with the desired index
