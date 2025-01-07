@@ -16,11 +16,11 @@ class ScoreBoard : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score_board)
 
-        val backButton = findViewById<ImageView>(R.id.back_button)
-
-        backButton.setOnClickListener {
-            finish()
-        }
+//        val backButton = findViewById<ImageView>(R.id.back_button)
+//
+//        backButton.setOnClickListener {
+//            finish()
+//        }
         // Sample data for the scoreboard
         val scores = listOf(
             FriendScore("Nahian", "Kkk", 63),

@@ -9,23 +9,21 @@
     android:orientation="vertical"
     tools:context=".frontend.pages.LoginPage">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="650dp"
         android:layout_gravity="center"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-
-        >
+        app:cardElevation="10dp"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/mainbkg"
-            android:orientation="vertical"
-
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,48 +44,63 @@
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
                 <!-- Email input field -->
-                <EditText
-                    android:id="@+id/login_email"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:background="@color/white"
-                    android:drawableStart="@drawable/baseline_email_24"
-                    android:drawablePadding="8dp"
-                    android:hint="@string/Email"
-                    android:inputType="textEmailAddress"
-                    android:padding="16dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey" />
+                    app:boxStrokeColor="@color/grey"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/login_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:hint="@string/Email"
+                        android:inputType="textEmailAddress"
+                        android:padding="16dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Password input field -->
-                <EditText
-                    android:id="@+id/login_password"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    app:boxStrokeColor="@color/grey"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/login_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="16dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Login Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/login_button"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="30dp"
-                    android:background="@color/white"
-                    android:drawableStart="@drawable/baseline_lock_24"
-                    android:drawablePadding="8dp"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:padding="16dp"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@color/grey" />
-
-
-                <Button
-                    android:id="@+id/login_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:backgroundTint="@color/black"
                     android:text="@string/login"
-                    android:textColor="@color/design_default_color_background"
+                    android:textAllCaps="false"
                     android:textSize="18sp"
-                    app:cornerRadius="30dp" />
+                    app:cornerRadius="30dp"
+                    app:backgroundTint="@color/black"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/signUpRedirectText"
@@ -96,12 +109,12 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:padding="8dp"
-                    android:text="Not yet registered ? Sign Up"
+                    android:text="Not yet registered? Sign Up"
                     android:textAlignment="center"
                     android:textColor="@color/blue_200"
                     android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
